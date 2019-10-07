@@ -19,8 +19,10 @@
   "homepage": "https://github.com/AlexAleshina/trip-mouse#readme",
   "dependencies": {
     "body-parser": "^1.19.0",
+    "cookie-parser": "^1.4.4",
     "express": "^4.17.1",
     "hbs": "^4.0.5",
-    "mongoose": "^5.7.3"
+    "mongoose": "^5.7.3",
+    "serve-favicon": "^2.5.0"
   }
 }
