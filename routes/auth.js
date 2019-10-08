@@ -70,13 +70,14 @@ router.post("/login", (req, res) => {
           else if (!equal) res.json({ loggedIn: false }); // this is different
           else {
             req.session.user = user;
-            res.json({ loggedIn: true }); // this is different
+            res.redirect('/mytrips')
+            //res.json({ loggedIn: true }); // this is different
           }
         });
       }
     })
     .catch(err => {
-      res.send("error errocr", err);
+      res.send("error error", err);
     })
 })
 
