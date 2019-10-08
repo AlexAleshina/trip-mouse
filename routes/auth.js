@@ -59,6 +59,27 @@ router.post('/login', (req, res, next) => {
   res.render('mytrips');
 });
 
+
+router.post("/login", (req,res)=> {
+  User.findOne({email: req.body.email})
+      .then((user)=> {
+          if(!user) res.json({loggedIn: false}) // this is different
+          else {
+              bcrypt.compare(req.body.password, user.password, function(err, equal) {
+                  if(err) res.send(err);
+                  else if(!equal) res.json({loggedIn: false}); // this is different
+                  else {
+                      req.session.user = user;
+                      res.json({loggedIn: true}); // this is different
+                  }
+              });
+          }
+      })
+      .catch(err=> {
+          res.send("error erropr", err);
+      })
+})
+
 //logout
 router.get('/logout', (req, res, next) => {
   req.session.destroy();

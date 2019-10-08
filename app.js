@@ -6,6 +6,7 @@ const cookieParser = require('cookie-parser');
 const favicon      = require('serve-favicon');
 const hbs          = require('hbs');
 const mongoose     = require('mongoose');
+var session = require("express-session");
 //const logger       = require('morgan');
 const path         = require('path');
 //var session        = require("express-session");
@@ -25,7 +26,12 @@ app.set('view engine', 'hbs');
 
 app.use(bodyParser.urlencoded({ extended: false }));
 
-
+app.use(session({
+    secret: 'keyboard cat',
+    expires: {maxAge: 6000},
+    resave: true,
+    saveUninitialized: true
+  }))
 
 
 let index = require('./routes/index');
