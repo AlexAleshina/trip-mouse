@@ -1,8 +1,22 @@
 <h3>Search page</h3>
-<a href = '/result'>result</a><!--do the last-->
+<a href='/result'>result</a>
+<!--do the last-->
 <a href="/signup">sign up</a><br><br>
 <a href="/login">log in</a><br><br>
 <a href="/logout">log out</a><br><br>
 <a href="/help">help</a><br><br>
 <a href="/about">about</a><br><br>
-<a href="/">main</a><br><br><!--where is a logo I guess -->
+<a href="/">main</a><br><br>
+<!--where is a logo I guess -->
+
+<!--if surprise - cannot write in From to where, only dates and budget-->
+<form method="GET">
+    <input type="number" required name="minBudget" placeholder="min budget" id="minBudget">
+    <input type="number" required name="maxBudget" placeholder="max budget" id="maxBudget">
+    <input type="date" required name="dateFrom" placeholder="from" id="dateFrom">
+    <input type="date" required name="dateTo" placeholder="to" id="dateTo">
+    <input type="text" required name="fromPlace" placeholder="from" id="fromPlace">
+    <input type="text" name="where" placeholder="where" id="where">
+    <input type="checkbox" name="surprise" id="surprise">surprise me</input><br>
+    <input type="submit">
+</form>

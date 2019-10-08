@@ -40,6 +40,9 @@ app.use('/', index);
 let login = require('./routes/auth');
 app.use('/', login);
 
+let search = require('./routes/search');
+app.use('/', search);
+
 //module.exports = app;
 
 app.listen(3000,()=> {
