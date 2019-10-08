@@ -3,6 +3,14 @@ let router = express();
 
 router.get('/', (req, res, next) => {
     res.render('index');
-  });
+});
 
-  module.exports = router;
+router.get('/about', (req, res, next) => {
+    res.render('about');
+});
+
+router.get('/help', (req, res, next) => {
+    res.render('help');
+});
+
+module.exports = router;
