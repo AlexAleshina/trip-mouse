@@ -9,14 +9,19 @@
 <a href="/">main</a><br><br>
 <!--where is a logo I guess -->
 
-<!--if surprise - cannot write in From to where, only dates and budget-->
+<!--if surprise on => you can put fromPlace, min and max days, 
+if surprise off => you can put from where and exemplarary depart day -->
 <form method="GET">
-    <input type="number" required name="minBudget" placeholder="min budget" id="minBudget">
-    <input type="number" required name="maxBudget" placeholder="max budget" id="maxBudget">
-    <input type="date" required name="dateFrom" placeholder="from" id="dateFrom">
-    <input type="date" required name="dateTo" placeholder="to" id="dateTo">
-    <input type="text" required name="fromPlace" placeholder="from" id="fromPlace">
-    <input type="text" name="where" placeholder="where" id="where">
+    <input type="date" name="dateFrom" placeholder="from" id="dateFrom" value="{{dateFrom}}">
+    <input type="text" required name="fromPlace" placeholder="from" id="fromPlace" value="{{fromPlace}}">
+    <input type="text" name="toPlace" placeholder="toPlace" id="toPlace" value="{{toPlace}}">
+    <input type="number" name="minDays" placeholder="minimum days" id="minDays" value="{{minDays}}">
+    <input type="number" name="maxDays" placeholder="maximum Days" id="maxDays" value="{{maxDays}}">
     <input type="checkbox" name="surprise" id="surprise">surprise me</input><br>
+    <h3>Currency:</h3>
+      <select id="cur" name = "currency">
+        <option value="EUR">Euro</option>
+        <option value="USD">US Dollar $</option>
+        <option value="RUB">Russian Rubbles</option>
     <input type="submit">
 </form>
