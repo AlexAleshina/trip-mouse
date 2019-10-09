@@ -24,14 +24,21 @@ mongoose
 app.set('views', path.join(__dirname, 'views'));
 app.set('view engine', 'hbs');
 
+
+
 app.use(bodyParser.urlencoded({ extended: false }));
 
 app.use(session({
     secret: 'keyboard cat',
-    expires: {maxAge: 6000},
+    expires: {maxAge: 10000},
     resave: true,
     saveUninitialized: true
   }))
+
+app.use((req, res, next) => {
+    res.locals.sessionJson = JSON.stringify(req.session);
+    next();
+});
 
 
 let index = require('./routes/index');
@@ -39,6 +46,9 @@ app.use('/', index);
 
 let login = require('./routes/auth');
 app.use('/', login);
+
+let search = require('./routes/search');
+app.use('/', search);
 
 //module.exports = app;
 
