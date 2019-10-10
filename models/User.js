@@ -8,7 +8,11 @@ const userSchema = new Schema(
         lastName: { type: String, required: true },
         phone: { type: String, required: true },
         email: { type: String, required: true },
-        passwordHash: { type: String, required: true }
+        passwordHash: { type: String, required: true },
+        trips: [{
+            type: mongoose.Schema.Types.ObjectId,
+            ref: 'Trips'
+        }]
     },
     {
         timestamps: true

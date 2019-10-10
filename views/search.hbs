@@ -13,129 +13,95 @@ where is a logo I guess
 
 <!-- Pop-out Menu (if small screen) -->
 
-	<div class="menu">
-		<div class="menu_header d-flex flex-row align-items-center justify-content-start">
-			<div class="menu_logo"><a href="index.html">TripMouse</a></div>
-			<div class="menu_close_container ml-auto"><div class="menu_close"><div></div><div></div></div></div>
-		</div>
-		<div class="menu_content">
-			<ul>
-				<li><a href="/seach">Search</a></li>
-				<li><a href="/about">About</a></li>
-				<li><a href="/help">Help</a></li>
-			</ul>
-		</div>
-	</div>
-	<!-- Home -->
-
-	<div class="home">
-		
-		<!-- Home Slider -->
-		<div class="home_slider_container">
-			<div class="owl-carousel owl-theme home_slider">
-				
-				<!-- Slide -->
-				<div class="owl-item">
-					<div class="background_image" style="background-image:url(images/home_slider.jpg)"></div>
-					<div class="home_slider_content_container">
-						<div class="container">
-							<div class="row">
-								<div class="col">
-									<div class="home_slider_content">
-										<div class="home_title"><h2>TripMouse</h2></div>
-									</div>
-								</div>
-							</div>
-						</div>
-					</div>
-				</div>
-
-			</div>
-		</div>
-	</div>
-
-	<!-- Search -->
-  <!--if surprise on => you can put fromPlace, min and max days, 
-if surprise off => you can put from where and depart day 
-do it from DOM-->
-
-  <!-- **OLD SEARCH FORM**
-	<div class="home_search">
-		<div class="container">
-			<div class="row">
-				<div class="col">
-					<div class="home_search_container">
-						<div class="home_search_title">Search for your trip</div>
-						<div class="home_search_content">
-							<form action="#" class="home_search_form" id="home_search_form">
-								<div class="d-flex flex-lg-row flex-column align-items-start justify-content-lg-between justify-content-start">
-									<input type="text" class="search_input search_input_1" placeholder="City" required="required">
-									<input type="text" class="search_input search_input_2" placeholder="Departure" required="required">
-									<input type="text" class="search_input search_input_3" placeholder="Arrival" required="required">
-									<input type="text" class="search_input search_input_4" placeholder="Budget" required="required">
-									<button class="home_search_button">search</button>
-								</div>
-							</form>
-						</div>
-					</div>
-				</div>
-			</div>
-		</div>
-	</div>
+<div class="menu">
+    <div class="menu_header d-flex flex-row align-items-center justify-content-start">
+        <div class="menu_logo"><a href="index.html">TripMouse</a></div>
+        <div class="menu_close_container ml-auto">
+            <div class="menu_close">
+                <div></div>
+                <div></div>
+            </div>
+        </div>
+    </div>
+    <div class="menu_content">
+        <ul>
+            <li><a href="/seach">Search</a></li>
+            <li><a href="/about">About</a></li>
+            <li><a href="/help">Help</a></li>
+        </ul>
+    </div>
 </div>
-  -->
+<!-- Home -->
 
-<!-- **ALEX'S SEARCH FORM**
-<form method="GET">
-    <input type="date" class="search_input search_input_1" name="dateFrom" placeholder="from" id="dateFrom" value="{{dateFrom}}">
-    <input type="text" class="search_input search_input_2" required name="fromPlace" placeholder="from" id="fromPlace" value="{{fromPlace}}">
-    <input type="text" class="search_input search_input_3" name="toPlace" placeholder="toPlace" id="toPlace" value="{{toPlace}}">
-    <input type="number" class="search_input search_input_4" name="minDays" placeholder="minimum days" id="minDays" value="{{minDays}}">
-    <input type="number" class="search_input search_input_4" name="maxDays" placeholder="maximum Days" id="maxDays" value="{{maxDays}}">
-    <label class="surprise">Surprise Me!<input type="checkbox" name="surprise" id="surprise"><span class="checkmark"></span>
-</label>
-    <h3>Currency:</h3>
-      <select id="cur" name = "currency">
-        <option value="EUR">Euro</option>
-        <option value="USD">US Dollar $</option>
-        <option value="RUB">Russian Rubbles</option>
-        <option value="AUD">Australian dollar</option>
-    <input id="submitSearch" type="submit" name="submit" value="submit">
-</form>
--->
+<div class="home">
+
+    <!-- Home Slider -->
+    <div class="home_slider_container">
+        <div class="owl-carousel owl-theme home_slider">
+
+            <!-- Slide -->
+            <div class="owl-item">
+                <div class="background_image" style="background-image:url(images/home_slider.jpg)"></div>
+                <div class="home_slider_content_container">
+                    <div class="container">
+                        <div class="row">
+                            <div class="col">
+                                <div class="home_slider_content">
+                                    <div class="home_title">
+                                        <h2>TripMouse</h2>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+        </div>
+    </div>
+</div>
+
+<!-- Search -->
+<!--if surprise on => you can put fromPlace, min and max days, 
+if surprise off => you can put  departure, arrival and depart day 
+do it from DOM-->
 
 <!-- TESTING NEW FORM -->
 <div class="home_search">
-		<div class="container">
-			<div class="row">
-				<div class="col">
-					<div class="home_search_container">
-						<div class="home_search_title">Search for your trip</div>
-						<div class="home_search_content">
-							<form method="GET" class="home_search_form" id="home_search_form">
-								<div class="d-flex flex-lg-row flex-column align-items-start justify-content-lg-between justify-content-start">
-								<input type="date" class="search_input search_input_1" name="dateFrom" placeholder="from" id="dateFrom" value="{{dateFrom}}">
-								<input type="text" class="search_input search_input_2" required name="fromPlace" placeholder="origin city" id="fromPlace" value="{{fromPlace}}">
-								<input type="text" class="search_input search_input_3" name="toPlace" placeholder="destination city" id="toPlace" value="{{toPlace}}">
-								<input type="number" class="search_input search_input_4" name="minDays" placeholder="minimum stay (days)" id="minDays" value="{{minDays}}">
-								<input type="number" class="search_input search_input_4" name="maxDays" placeholder="maximum stay (days)" id="maxDays" value="{{maxDays}}">
-								<label class="surpriseMeText">surprise me! <input type="checkbox">
-								</label>
-								<div id="currencyLabel">currency</div>
-								<select id="cur" name = "currency">
-									<option value="EUR">Euro</option>
-									<option value="USD">US Dollar $</option>
-									<option value="RUB">Russian Rubbles</option> 
-								<input id="submitSearch" type="submit" name="submit" value="search">
-							</form>
-						</div>
-					</div>
-				</div>
-			</div>
-		</div>
-	</div>
+    <div class="container">
+        <div class="row">
+            <div class="col">
+                <div class="home_search_container">
+                    <div class="home_search_title">Search for your trip</div>
+                    <div class="home_search_content">
+                        <form method="GET" class="home_search_form" id="home_search_form">
+                            <div
+                                class="d-flex flex-lg-row flex-column align-items-start justify-content-lg-between justify-content-start">
+                                <input type="date" class="search_input search_input_1" name="dateFrom"
+                                    placeholder="from" id="dateFrom" value="{{dateFrom}}">
+                                <input type="text" class="search_input search_input_2" required name="fromPlace"
+                                    placeholder="from" id="fromPlace" value="{{fromPlace}}">
+                                <input type="text" class="search_input search_input_3" name="toPlace"
+                                    placeholder="toPlace" id="toPlace" value="{{toPlace}}">
+                                <input type="number" class="search_input search_input_4" name="minDays"
+                                    placeholder="minimum days" id="minDays" value="{{minDays}}">
+                                <input type="number" class="search_input search_input_4" name="maxDays"
+                                    placeholder="maximum Days" id="maxDays" value="{{maxDays}}">
+                                <label class="surprise">Surprise Me!<input type="checkbox" name="surprise"
+                                        id="surprise"><span class="checkmark"></span>
+                                </label>
+                                <div id="currencyLabel">CURRENCY</div>
+                                <select id="cur" name="currency">
+                                    <option value="EUR">Euro</option>
+                                    <option value="USD">US Dollar $</option>
+                                    <option value="RUB">Russian Rubbles</option>
+                                    <option value="AUD">Australian dollar</option>
+                                    <input id="submitSearch" type="submit" name="submit" value="search">
+                        </form>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
 </div>
-
-
-
-
+</div>

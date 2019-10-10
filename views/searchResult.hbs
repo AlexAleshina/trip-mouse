@@ -1,3 +1,5 @@
+{{> header}}
+
 <h3>Full page - result</h3>
 <a href="/search">search again</a>
 <a href="/signup">sign up</a><br><br>
@@ -10,12 +12,25 @@
 
 {{#each data}}
 <div>
-    <li>{{this.origin}}</li>
-    <li>{{this.destination}}</li>
-    <li>{{this.value}}</li>
-    <li>{{this.depart_date}}</li>
-    <li>{{this.return_date}}</li>
-    <a href="http://{{this.gate}}">BUY</a>
-    <a href="/add">add</a>
+    <form method="POST" action="/add">
+        <input class="hidden" name="origin" value="{{this.origin}}">
+        <li>{{this.origin}}</li>
+        <input class="hidden" name="destination" value="{{this.destination}}">
+        <li>{{this.destination}}</li>
+        <!--CUR-->
+        
+        <input class="hidden" name="value" value="{{this.value}}">
+        <li>{{this.value}}</li>
+        <input class="hidden" name="depart_date" value="{{this.depart_date}}">
+        <li>{{this.depart_date}}</li>
+        <input class="hidden" name="return_date" value="{{this.return_date}}">
+        <li>{{this.return_date}}</li>
+        <input class="hidden" name="number_of_changes" value="{{this.number_of_changes}}">
+        <li>{{this.number_of_changes}}</li>
+
+        <input class="hidden" name="gate" value="{{this.gate}}"><a href="http://{{this.gate}}.com">BUY</a>
+
+        <button type="submit" value="add">Add</button>
+    </form>
 </div>
 {{/each}}
