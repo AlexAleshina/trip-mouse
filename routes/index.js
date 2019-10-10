@@ -19,7 +19,7 @@ router.get('/mytrips', (req, res, next) => {
 
 
 router.get('/result', (req, res, next) => {
-    res.render('result');
+    res.render('searchResult');
 });
 
 
