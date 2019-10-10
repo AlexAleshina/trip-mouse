@@ -6,8 +6,15 @@
 <a href="/about">about</a><br><br>
 <a href="/search">search</a><br><br>
 <a href="/">main</a><br><br><!--where is a logo I guess -->
+
+
+{{#each trip}}
 <div>
-        {{#if users}}
-        <h1>Hi {{firstName}} {{lastName}}</h1>
-        {{/if}}
-    </div>
+
+    <li>{{this.origin}}</li>
+    <li>{{this.destination}}</li>
+    <li>{{this.value}}</li>
+    <li>{{this.depart_date}}</li>
+    <li>{{this.return_date}}</li>
+</div>
+{{/each}}

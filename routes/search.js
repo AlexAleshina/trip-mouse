@@ -97,30 +97,18 @@ router.get('/search', (req, res, next) => {
 
 });
 
-
 router.get('/search', (req, res, next) => {
     res.render('search', req.query);
 });
  
 */
 
-
-
-
-
-
-
-
-
 /*
 router.post('/search', (req, res, next) => {
     res.render('result');
 });
 
-
 //axios.get(`http://min-prices.aviasales.ru/calendar_preload?origin=BCN&destination=MOW&depart_date=2014-12-01&one_way=false`)
-
-
 
   var startDate = document.getElementById('dateFrom');
   var endDate = document.getElementById('dateTo');
@@ -128,7 +116,6 @@ router.post('/search', (req, res, next) => {
   var from = document.getElementById('fromPlace');
   var where = document.getElementById('toPlace');
   var surprise = document.getElementById('surprise');
-
 
   startDate.addEventListener('change', filterChangedDate);
   endDate.addEventListener('change', filterChangedDate);
@@ -138,9 +125,5 @@ router.post('/search', (req, res, next) => {
   surprise.addEventListener('change', filterChangedDate);
 
 */
-
-
-
-
 
 module.exports = router;
