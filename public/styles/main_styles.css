@@ -772,13 +772,11 @@ section
 }
 
 /* Currency Label */
-#currency
+#currencyLabel
 {
 	color: #000000;
-	font-size: 10vw;
+	font-size: 1vw;
 	font-family: 'Oswald', sans-serif;
-	font-weight: 400;
-	border-radius: 20px;
 }
 
 /* Styling Submit button */
@@ -1388,6 +1386,12 @@ section
 .footer_contact_list ul li:not(:last-child)
 {
 	margin-bottom: 7px;
+}
+
+/* Surprise Me text */
+.surpriseMeText {
+	font-family: 'Oswald', sans-serif;
+	color: #000000;
 }
 
 /* Create checkbox */
