@@ -1,6 +1,6 @@
 const express = require('express');
 let router = express();
-let Trip = require("../models/Trips");
+const Trip = require("../models/Trips");
 /*
 router.get('/add', (req, res, next) => {
 
@@ -17,7 +17,7 @@ router.get('/add', (req, res, next) => {
 }
 )
 */
-router.get('/add', (req, res) => {
+router.post('/add', (req, res) => {
     const renderError = (msg) => {
         console.log(msg);
         res.render('searchResult', { error: msg });
