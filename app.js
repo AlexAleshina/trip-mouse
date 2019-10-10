@@ -11,6 +11,8 @@ var session = require("express-session");
 const path         = require('path');
 //var session        = require("express-session");
 
+hbs.registerPartials(__dirname + '/views/partials');
+
 mongoose
   .connect('mongodb://localhost/tripmouse', {useNewUrlParser: true})
   .then(x => {
@@ -23,7 +25,7 @@ mongoose
 
 app.set('views', path.join(__dirname, 'views'));
 app.set('view engine', 'hbs');
-
+app.use(express.static("public"))
 
 
 app.use(bodyParser.urlencoded({ extended: false }));
