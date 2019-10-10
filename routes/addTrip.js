@@ -1,7 +1,7 @@
 const express = require('express');
 let router = express();
 let Trip = require("../models/Trips");
-
+/*
 router.get('/add', (req, res, next) => {
 
     const { title, director, stars, image, description, showtimes } = req.body;
@@ -16,7 +16,7 @@ router.get('/add', (req, res, next) => {
         })
 }
 )
-
+*/
 router.get('/add', (req, res) => {
     const renderError = (msg) => {
         console.log(msg);
@@ -35,18 +35,13 @@ router.get('/add', (req, res) => {
                 gate: req.body.gate
             })
                 .then(() => {
-                    res.render('mytrips', {trip})
+                    res.render('mytrips', { trip })
                 })
                 .catch((err) => {
                     renderError(err.message)
                 })
-        }
+        })
           })
-        }
-      })
-  })
-
-
 
 
 

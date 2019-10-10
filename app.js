@@ -52,6 +52,9 @@ app.use('/', login);
 let search = require('./routes/search');
 app.use('/', search);
 
+let add = require('./routes/addTrip');
+app.use('/', add);
+
 //module.exports = app;
 
 app.listen(3000,()=> {
