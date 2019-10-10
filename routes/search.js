@@ -10,12 +10,14 @@ router.get('/search', (req, res, next) => {
         console.log('searching...');
         result = axios.get(`http://map.aviasales.ru/prices.json?origin_iata=${fromPlace}&period=year&direct=true&one_way=false&min_trip_duration_in_days=${minDays}&max_trip_duration_in_days=${maxDays}&currency=${currency}`)
             .then(result => {
-                console.log(result)
-                res.render('searchResult')
+                
+                //console.log(result.data);
+                let data = result.data
+                res.render('searchResult', {data})
             })
             .catch(err => {
             })
-        res.send(`Searching flights with params: ${JSON.stringify(req.query)} (with surprise)`);
+        //res.send(`Searching flights with params: ${JSON.stringify(req.query)} (with surprise)`);
     } else {
         next();
     }
@@ -28,13 +30,13 @@ router.get('/search', (req, res, next) => {
         console.log('searching...');
         result = axios.get(` http://min-prices.aviasales.ru/calendar_preload?origin=${fromPlace}&destination=${toPlace}&depart_date=${dateFrom}&currency=${currency}`)
             .then(result => {
-                
-                //const data = Object(current_depart_date_prices[best_prices]);
-                console.log(result);
+
+                let data = result.data.best_prices;
+                res.render('searchResult', {data})
             })
             .catch(err => {
             })
-        res.send(`Searching flights with params: ${JSON.stringify(req.query)} (with surprise)`);
+        //res.send(`Searching flights with params: ${JSON.stringify(req.query)} (with surprise)`);
     }
     else {
         next();
