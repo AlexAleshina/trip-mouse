@@ -940,6 +940,10 @@ section
 	margin-top: 16px;
 }
 
+
+.hidden{
+	display: none;
+}
 /*********************************
 9. Testimonials
 *********************************/

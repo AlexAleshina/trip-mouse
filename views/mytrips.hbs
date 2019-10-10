@@ -1,3 +1,4 @@
+{{> header}}
 <h1>My trips</h1>
 <a href="/signup">sign up</a><br><br>
 <a href="/login">log in</a><br><br>
@@ -15,5 +16,7 @@
     <li>{{this.value}}</li>
     <li>{{this.depart_date}}</li>
     <li>{{this.return_date}}</li>
+    <li>{{this.number_of_changes}}</li>
+    <div><a href="/delete?deleteId={{id}}">delete</a></div>
 </div>
 {{/each}}

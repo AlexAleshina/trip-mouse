@@ -4,12 +4,13 @@ const Schema = mongoose.Schema;
 
 const tripSchema = new Schema(
     {
-        origin: { type: String, required: true },
-        destination: { type: String, required: true },
-        value: { type: String, required: true },
-        depart_date: { type: String, required: true },
-        return_date: { type: String, required: true },
-        gate: { type: String, required: true },
+        origin: { type: String },
+        destination: { type: String },
+        value: { type: String },
+        depart_date: { type: String },
+        return_date: { type: String },
+        number_of_changes: { type: String }
+
     }
 );
 

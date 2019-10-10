@@ -8,7 +8,7 @@ router.get('/search', (req, res, next) => {
 
     if (surprise === 'on' && fromPlace && minDays && maxDays) {
         console.log('searching...');
-        result = axios.get(`http://map.aviasales.ru/prices.json?origin_iata=${fromPlace}&period=year&direct=true&one_way=false&min_trip_duration_in_days=${minDays}&max_trip_duration_in_days=${maxDays}&currency=${currency}`)
+        result = axios.get(`http://map.aviasales.ru/prices.json?origin_iata=${fromPlace}&period=year&direct=false&one_way=false&min_trip_duration_in_days=${minDays}&max_trip_duration_in_days=${maxDays}&currency=${currency}`)
             .then(result => {
                 
                 //console.log(result.data);
