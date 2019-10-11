@@ -49,12 +49,12 @@ app.use('/', index);
 
 let login = require('./routes/auth');
 app.use('/', login);
-
+/*
 app.use('/*', (req, res, next) => {
   if (req.session.user) next();
   else res.redirect('/login')
 });
-
+*/
 let search = require('./routes/search');
 app.use('/', search);
 
