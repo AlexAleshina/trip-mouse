@@ -1,3 +1,4 @@
+require('dotenv').config();
 let express = require('express');
 let app = express();
 
@@ -14,7 +15,7 @@ const path = require('path');
 hbs.registerPartials(__dirname + '/views/partials');
 
 mongoose
-  .connect('mongodb://localhost/tripmouse', { useNewUrlParser: true })
+  .connect(process.env.DB, { useNewUrlParser: true })
   .then(x => {
     console.log(`Connected to Mongo! Database name: "${x.connections[0].name}"`)
   })
@@ -62,12 +63,12 @@ let add = require('./routes/addDeleteTrip');
 app.use('/', add);
 
 let trip = require('./routes/mytrips');
-app.use('/', trip);
+app.use('/', trip);    
 
 
 
 //module.exports = app;
 
-app.listen(3000, () => {
+app.listen(process.env.PORT, () => {
   console.log("App is listening to port", 3000)
 })
