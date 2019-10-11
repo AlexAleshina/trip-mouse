@@ -13,11 +13,13 @@ router.get('/search', (req, res, next) => {
                 
                 //console.log(result.data);
                 let data = result.data
-                res.render('searchResult', {data})
+
+
+                res.render('searchResult', {data, currency})
             })
             .catch(err => {
             })
-        //res.send(`Searching flights with params: ${JSON.stringify(req.query)} (with surprise)`);
+
     } else {
         next();
     }
@@ -32,7 +34,7 @@ router.get('/search', (req, res, next) => {
             .then(result => {
 
                 let data = result.data.best_prices;
-                res.render('searchResult', {data})
+                res.render('searchResult', {data, currency})
             })
             .catch(err => {
             })
@@ -49,9 +51,9 @@ router.get('/search', (req, res, next) => {
 });
 
 
-
-
-
+router.get('/result', (req, res, next) => {
+    res.render('searchResult');
+});
 
 
 

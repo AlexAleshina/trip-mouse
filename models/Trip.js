@@ -9,8 +9,11 @@ const tripSchema = new Schema(
         value: { type: String },
         depart_date: { type: String },
         return_date: { type: String },
-        number_of_changes: { type: String }
-
+        number_of_changes: { type: String },
+        userId: {
+            type: mongoose.Schema.Types.ObjectId,
+            ref: 'Users'
+        }
     }
 );
 
