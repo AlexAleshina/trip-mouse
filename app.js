@@ -1,20 +1,20 @@
 let express = require('express');
 let app = express();
 
-const bodyParser   = require('body-parser');
+const bodyParser = require('body-parser');
 const cookieParser = require('cookie-parser');
-const favicon      = require('serve-favicon');
-const hbs          = require('hbs');
-const mongoose     = require('mongoose');
+const favicon = require('serve-favicon');
+const hbs = require('hbs');
+const mongoose = require('mongoose');
 var session = require("express-session");
 //const logger       = require('morgan');
-const path         = require('path');
+const path = require('path');
 //var session        = require("express-session");
 
 hbs.registerPartials(__dirname + '/views/partials');
 
 mongoose
-  .connect('mongodb://localhost/tripmouse', {useNewUrlParser: true})
+  .connect('mongodb://localhost/tripmouse', { useNewUrlParser: true })
   .then(x => {
     console.log(`Connected to Mongo! Database name: "${x.connections[0].name}"`)
   })
@@ -31,15 +31,16 @@ app.use(express.static(path.join(__dirname, 'public')));
 app.use(bodyParser.urlencoded({ extended: false }));
 
 app.use(session({
-    secret: 'keyboard cat',
-    expires: {maxAge: 10000},
-    resave: true,
-    saveUninitialized: true
-  }))
+  secret: 'keyboard cat',
+  expires: { maxAge: new Date(Date.now() + (60 * 1000 * 30)) },
+  resave: true,
+  saveUninitialized: true
+}))
 
 app.use((req, res, next) => {
-    res.locals.sessionJson = JSON.stringify(req.session);
-    next();
+  res.locals.sessionJson = JSON.stringify(req.session);
+  res.locals.user = req.session.user
+  next();
 });
 
 
@@ -49,14 +50,24 @@ app.use('/', index);
 let login = require('./routes/auth');
 app.use('/', login);
 
+app.use('/*', (req, res, next) => {
+  if (req.session.user) next();
+  else res.redirect('/login')
+});
+
 let search = require('./routes/search');
 app.use('/', search);
 
-let add = require('./routes/addTrip');
+let add = require('./routes/addDeleteTrip');
 app.use('/', add);
+
+let trip = require('./routes/mytrips');
+app.use('/', trip);
+
+
 
 //module.exports = app;
 
-app.listen(3000,()=> {
-    console.log("App is listening to port", 3000)
-  })
+app.listen(3000, () => {
+  console.log("App is listening to port", 3000)
+})

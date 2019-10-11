@@ -13,14 +13,6 @@ router.get('/help', (req, res, next) => {
     res.render('help');
 });
 
-router.get('/mytrips', (req, res, next) => {
-    res.render('mytrips');
-});
-
-
-router.get('/result', (req, res, next) => {
-    res.render('searchResult');
-});
 
 
 module.exports = router;
