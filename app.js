@@ -13,7 +13,7 @@ const path = require('path');
 //var session        = require("express-session");
 
 hbs.registerPartials(__dirname + '/views/partials');
-
+//DB=mongodb://cluster0-shard-00-00-bpwvb.mongodb.net
 mongoose
   .connect(process.env.DB, { useNewUrlParser: true })
   .then(x => {
@@ -50,12 +50,12 @@ app.use('/', index);
 
 let login = require('./routes/auth');
 app.use('/', login);
-/*
+
 app.use('/*', (req, res, next) => {
   if (req.session.user) next();
   else res.redirect('/login')
 });
-*/ 
+
 let search = require('./routes/search');
 app.use('/', search);
 

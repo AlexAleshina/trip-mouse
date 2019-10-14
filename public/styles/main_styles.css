@@ -770,7 +770,24 @@ section
 	outline: none;
 	cursor: pointer;
 }
-
+.home_search_a{
+	display: block;
+    height: 42px;
+    background: #181818;
+    color: #FFFFFF;
+    font-family: 'Oswald', sans-serif;
+    font-size: 16px;
+    font-weight: 400;
+    text-transform: uppercase;
+    border-radius: 20px;
+    border: none;
+    outline: none;
+    cursor: pointer;
+	text-align: center;
+	padding-top: 7px;
+	padding-bottom: 20px;
+	margin-top:10px;
+}
 /* Currency Label */
 #currencyLabel
 {
