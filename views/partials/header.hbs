@@ -10,24 +10,46 @@
 									style="width:84px;height:84px;border:0;">
 							</a>
 						</div>
+						<!-- I can't get this to style correctly :(
+						<div>
+							{{#if user}}
+							Hi {{user.firstName}}!!!
+							{{/if}}
+							</div>
+						-->	
+
 						<nav class="main_nav">
+							
 							<ul class="d-flex flex-row align-items-start justify-content-start">
-								<li class="active"><a href="/">Home</a></li>
+								<li><a href="/">Home</a></li>
+								<div>
+								{{#if user}}
+								<li><a href="/search">Search</a></li>
+								{{else}}
+								<li><a href="/signup">Sign Up</a></li>
+								{{/if}}
+								</div>
+								<div>
+								{{#if user}}
+								<li><a href="/mytrips">My Trips</a></li>
+								{{else}}
+								<li><a href="/login">Log In</a></li>
+								{{/if}}
+								</div>
+								<div>
+								{{#if user}}
+								<li><a href="/logout">Log Out</a></li>
+								{{/if}}
+								</div>
 								<li><a href="/about">About</a></li>
-								<li><a href="/help">Help</a></li>
+								<li><a href="/help">Help</a></li>						
 							</ul>
 						</nav>
-						<div class="header_phone ml-auto">Call us: +31 (0)6 16 12 76 59</div>
 
 						<!-- Hamburger (if small screen) -->
 
 						<div class="hamburger ml-auto">
 							<i class="fa fa-bars" aria-hidden="true"></i>
-						</div>
-						<div>
-							{{#if user}}
-							Hi {{user.firstName}}!!!
-							{{/if}}
 						</div>
 					</div>
 				</div>
@@ -35,3 +57,35 @@
 		</div>
 	</div>
 </header>
+	<div class="menu">
+		<div class="menu_header d-flex flex-row align-items-center justify-content-start">
+			<div class="menu_logo"><a href="index.html">TripMouse</a></div>
+			<div class="menu_close_container ml-auto"><div class="menu_close"><div></div><div></div></div></div>
+		</div>
+		<div class="menu_content">
+			<ul>
+				<li><a href="/">Home</a></li>
+								<div>
+								{{#if user}}
+								<li><a href="/search">Search</a></li>
+								{{else}}
+								<li><a href="/signup">Sign Up</a></li>
+								{{/if}}
+								</div>
+								<div>
+								{{#if user}}
+								<li><a href="/mytrips">My Trips</a></li>
+								{{else}}
+								<li><a href="/login">Log In</a></li>
+								{{/if}}
+								</div>
+								<div>
+								{{#if user}}
+								<li><a href="/logout">Log Out</a></li>
+								{{/if}}
+								</div>
+								<li><a href="/about">About</a></li>
+								<li><a href="/help">Help</a></li>					
+			</ul>
+		</div>
+	</div>
