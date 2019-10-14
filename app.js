@@ -14,6 +14,8 @@ const path = require('path');
 
 hbs.registerPartials(__dirname + '/views/partials');
 //DB=mongodb://cluster0-shard-00-00-bpwvb.mongodb.net
+//DB=mongodb://localhost/tripmouse
+
 mongoose
   .connect(process.env.DB, { useNewUrlParser: true })
   .then(x => {
