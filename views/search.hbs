@@ -1,36 +1,4 @@
 {{> header}}
-<!--
-<a href='/result'>result</a>
-do the last
-<a href="/signup">sign up</a><br><br>
-<a href="/login">log in</a><br><br>
-<a href="/logout">log out</a><br><br>
-<a href="/help">help</a><br><br>
-<a href="/about">about</a><br><br>
-<a href="/">main</a><br><br>
-where is a logo I guess
--->
-
-<!-- Pop-out Menu (if small screen) -->
-
-<div class="menu">
-    <div class="menu_header d-flex flex-row align-items-center justify-content-start">
-        <div class="menu_logo"><a href="index.html">TripMouse</a></div>
-        <div class="menu_close_container ml-auto">
-            <div class="menu_close">
-                <div></div>
-                <div></div>
-            </div>
-        </div>
-    </div>
-    <div class="menu_content">
-        <ul>
-            <li><a href="/seach">Search</a></li>
-            <li><a href="/about">About</a></li>
-            <li><a href="/help">Help</a></li>
-        </ul>
-    </div>
-</div>
 <!-- Home -->
 
 <div class="home">
@@ -65,8 +33,6 @@ where is a logo I guess
 <!--if surprise on => you can put fromPlace, min and max days, 
 if surprise off => you can put  departure, arrival and depart day 
 do it from DOM-->
-
-<!-- TESTING NEW FORM -->
 <div class="home_search">
     <div class="container">
         <div class="row">
@@ -80,18 +46,18 @@ do it from DOM-->
                                 <input type="date" class="search_input search_input_1" name="dateFrom"
                                     placeholder="from" id="dateFrom" value="{{dateFrom}}">
                                 <input type="text" class="search_input search_input_2" required name="fromPlace"
-                                    placeholder="from" id="fromPlace" value="{{fromPlace}}">
+                                    placeholder="Origin" id="fromPlace" value="{{fromPlace}}">
                                 <input type="text" class="search_input search_input_3" name="toPlace"
-                                    placeholder="toPlace" id="toPlace" value="{{toPlace}}">
+                                    placeholder="Destination" id="toPlace" value="{{toPlace}}">
                                 <input type="number" class="search_input search_input_4" name="minDays"
-                                    placeholder="minimum days" id="minDays" value="{{minDays}}">
+                                    placeholder="Minimum days" id="minDays" value="{{minDays}}">
                                 <input type="number" class="search_input search_input_4" name="maxDays"
-                                    placeholder="maximum Days" id="maxDays" value="{{maxDays}}">
-                                <label class="surprise">Surprise Me!<input type="checkbox" name="surprise"
-                                        id="surprise"><span class="checkmark"></span>
+                                    placeholder="Maximum Days" id="maxDays" value="{{maxDays}}">
+                                <label class="surprise">Surprise Destination<input type="checkbox" name="surprise"
+                                        id="surprise">
                                 </label>
-                                <div id="currencyLabel">CURRENCY</div>
-                                <select id="cur" name="currency">
+                                <div class="surprise">Currency</div>
+                                <select id="cur" name="currency" style=margin:2vw>
                                     <option value="EUR">Euro</option>
                                     <option value="USD">US Dollar $</option>
                                     <option value="RUB">Russian Rubbles</option>
