@@ -34,6 +34,7 @@ router.get('/search', (req, res, next) => {
             .then(result => {
 
                 let data = result.data.best_prices;
+                
                 res.render('searchResult', {data, currency})
             })
             .catch(err => {
